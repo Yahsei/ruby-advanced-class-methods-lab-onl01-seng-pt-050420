@@ -33,7 +33,7 @@ class Song
     song[0]
   end
 
-  def self.find_or_create_by_name(name)
+  def self.find_or_create_by_name(name) #Calling 2 previous methods
     #binding.pry
     if !find_by_name(name)
       create_by_name(name)
@@ -42,11 +42,11 @@ class Song
     end
   end
 
-  def self.alphabetical
+  def self.alphabetical #Sort from Index[0] or first leetter
     self.all.sort_by { |song| song.name[0]}
   end
 
-  def self.new_from_filename(filename)
+  def self.new_from_filename(filename) #get rid of .mp3 and - line split
     song_data = filename.sub!(/.mp3/,'').split(' - ')
 
     song = self.new
