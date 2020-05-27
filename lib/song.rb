@@ -1,6 +1,4 @@
-
-
-class Song	class Song
+class Song
   attr_accessor :name, :artist_name	  attr_accessor :name, :artist_name
   @@all = []	  @@all = []
 @@ -10,4 +12,65 @@ def save
