@@ -56,7 +56,7 @@ class Song
     song
   end
 
-  def self.create_from_filename(filename)
+  def self.create_from_filename(filename) #name without mp3 creation
     song_data = filename.sub!(/.mp3/,'').split(' - ')
 
     song = self.create
@@ -66,7 +66,7 @@ class Song
     song
   end
 
-  def self.destroy_all
+  def self.destroy_all #DESTROY
     self.all.clear
   end
 
