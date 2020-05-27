@@ -1,5 +1,5 @@
 class Song
-  attr_accessor :name, :artist_name
+  attr_accessor :name, :artist_name #base
   @@all = []
 
   def self.all
@@ -10,25 +10,25 @@ class Song
     self.class.all << self
   end
 
-  def self.create
+  def self.create        #Create song
     song = self.new
     song.save
     song
   end
 
-  def self.new_by_name(name)
+  def self.new_by_name(name) #String identify
     song = self.new
     song.name = name
     song
   end
 
-  def self.create_by_name(name)
+  def self.create_by_name(name) #String Create
     song = self.create
     song.name = name
     song
   end
 
-  def self.find_by_name(name)
+  def self.find_by_name(name) #Find
     song = self.all.select { |song| song.name == name }
     song[0]
   end
